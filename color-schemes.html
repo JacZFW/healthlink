@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthLink - Color Scheme Options</title>
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f1f5f9; color: #1e293b; line-height:1.6; }
+        .page-header { background: #fff; padding: 40px 0; text-align:center; border-bottom: 1px solid #e2e8f0; }
+        .page-header h1 { font-size: 28px; font-weight:700; margin-bottom:8px; }
+        .page-header p { color: #64748b; font-size:15px; }
+        .container { max-width: 1200px; margin:0 auto; padding:0 24px; }
+        
+        .scheme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; padding: 48px 0 64px; }
+        
+        .scheme-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); transition: transform 0.2s; cursor: pointer; }
+        .scheme-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+        .scheme-card.selected { outline: 3px solid #2563eb; outline-offset: -3px; }
+        
+        .scheme-header { padding: 24px 24px 16px; }
+        .scheme-name { font-size: 18px; font-weight:700; margin-bottom:4px; }
+        .scheme-desc { font-size: 13px; color: #64748b; }
+        
+        .color-strip { display: flex; height: 80px; }
+        .color-strip div { flex:1; position: relative; cursor: pointer; }
+        .color-strip div:hover::after {
+            content: attr(data-hex);
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight:600;
+            white-space: nowrap;
+        }
+        
+        .color-labels { display: flex; padding: 12px 16px; gap: 4px; }
+        .color-labels span { flex:1; font-size: 10px; color: #64748b; text-align:center; }
+        
+        .scheme-details { padding: 16px 24px 24px; }
+        .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { font-size: 12px; color: #64748b; }
+        .detail-value { font-size: 13px; font-weight:600; }
+        
+        .mini-preview { padding: 20px; margin: 16px 24px 24px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .mini-btn { display: inline-flex; padding: 8px 20px; border-radius: 8px; font-size: 13px; font-weight:600; margin: 4px; border: none; cursor: pointer; }
+        .mini-card { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-top:8px; font-size:12px; color:#64748b; }
+        
+        .recommend-badge { display: inline-block; background: #10b981; color:#fff; font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px; margin-left:8px; }
+        
+        .footer-note { text-align:center; padding:32px; color:#94a3b8; font-size:13px; }
+        
+        .copy-toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#1e293b; color:#fff; padding:10px 20px; border-radius:8px; font-size:13px; opacity:0; transition: opacity 0.3s; pointer-events:none; z-index:999; }
+        .copy-toast.show { opacity:1; }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="container">
+        <h1>🎨 HealthLink Color Scheme Options</h1>
+        <p>Choose the color palette that best fits our brand positioning. Click any color to copy its HEX value.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="scheme-grid">
+        
+        <!-- Scheme A: Medical Trust Blue -->
+        <div class="scheme-card" onclick="selectScheme(this)">
+            <div class="scheme-header">
+                <div class="scheme-name">A · Medical Trust Blue <span class="recommend-badge">RECOMMENDED</span></div>
+                <div class="scheme-desc">Classic medical palette. Builds trust fast. Best for conversion.</div>
+            </div>
+            <div class="color-strip">
+                <div style="background:#2563eb" data-hex="#2563eb" onclick="copyHex(event,'#2563eb')"></div>
+                <div style="background:#0891b2" data-hex="#0891b2" onclick="copyHex(event,'#0891b2')"></div>
+                <div style="background:#10b981" data-hex="#10b981" onclick="copyHex(event,'#10b981')"></div>
+                <div style="background:#f8fafc" data-hex="#f8fafc" onclick="copyHex(event,'#f8fafc')"></div>
+                <div style="background:#0f172a" data-hex="#0f172a" onclick="copyHex(event,'#0f172a')"></div>
+            </div>
+            <div class="color-labels">
+                <span>Primary</span>
+                <span>Secondary</span>
+                <span>Accent</span>
+                <span>Bg</span>
+                <span>Text</span>
+            </div>
+            <div class="scheme-details">
+                <div class="detail-row">
+                    <span class="detail-label">Best for</span>
+                    <span class="detail-value">General medical tourism</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Vibe</span>
+                    <span class="detail-value">Professional, safe, clean</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CTA contrast</span>
+                    <span class="detail-value" style="color:#10b981">●●● High</span>
+                </div>
+            </div>
+            <div class="mini-preview" style="background:#f8fafc">
+                <button class="mini-btn" style="background:#2563eb;color:#fff">Book Consultation</button>
+                <button class="mini-btn" style="background:transparent;color:#2563eb;border:2px solid #2563eb">Learn More</button>
+                <div class="mini-card">Featured Treatment Card Preview</div>
+            </div>
+        </div>
+
+        <!-- Scheme B: Premium Gold & Deep Blue -->
+        <div class="scheme-card" onclick="selectScheme(this)">
+            <div class="scheme-header">
+                <div class="scheme-name">B · Premium Gold & Blue</div>
+                <div class="scheme-desc">High-end feel. Warm gold CTA draws attention and clicks.</div>
+            </div>
+            <div class="color-strip">
+                <div style="background:#1e40af" data-hex="#1e40af" onclick="copyHex(event,'#1e40af')"></div>
+                <div style="background:#0d9488" data-hex="#0d9488" onclick="copyHex(event,'#0d9488')"></div>
+                <div style="background:#f59e0b" data-hex="#f59e0b" onclick="copyHex(event,'#f59e0b')"></div>
+                <div style="background:#ffffff" data-hex="#ffffff" onclick="copyHex(event,'#ffffff')"></div>
+                <div style="background:#1e293b" data-hex="#1e293b" onclick="copyHex(event,'#1e293b')"></div>
+            </div>
+            <div class="color-labels">
+                <span>Primary</span>
+                <span>Secondary</span>
+                <span>Accent</span>
+                <span>Bg</span>
+                <span>Text</span>
+            </div>
+            <div class="scheme-details">
+                <div class="detail-row">
+                    <span class="detail-label">Best for</span>
+                    <span class="detail-value">High-end international clients</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Vibe</span>
+                    <span class="detail-value">Premium, warm, exclusive</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CTA contrast</span>
+                    <span class="detail-value" style="color:#10b981">●●● High</span>
+                </div>
+            </div>
+            <div class="mini-preview" style="background:#ffffff">
+                <button class="mini-btn" style="background:#f59e0b;color:#1e293b">Book Consultation</button>
+                <button class="mini-btn" style="background:transparent;color:#1e40af;border:2px solid #1e40af">Learn More</button>
+                <div class="mini-card">Featured Treatment Card Preview</div>
+            </div>
+        </div>
+
+        <!-- Scheme C: Wellness Green -->
+        <div class="scheme-card" onclick="selectScheme(this)">
+            <div class="scheme-header">
+                <div class="scheme-name">C · Wellness Green</div>
+                <div class="scheme-desc">Health & nature-focused. Less "clinical", more "wellness retreat".</div>
+            </div>
+            <div class="color-strip">
+                <div style="background:#0d9488" data-hex="#0d9488" onclick="copyHex(event,'#0d9488')"></div>
+                <div style="background:#2563eb" data-hex="#2563eb" onclick="copyHex(event,'#2563eb')"></div>
+                <div style="background:#06b6d4" data-hex="#06b6d4" onclick="copyHex(event,'#06b6d4')"></div>
+                <div style="background:#f0fdf4" data-hex="#f0fdf4" onclick="copyHex(event,'#f0fdf4')"></div>
+                <div style="background:#134e4a" data-hex="#134e4a" onclick="copyHex(event,'#134e4a')"></div>
+            </div>
+            <div class="color-labels">
+                <span>Primary</span>
+                <span>Secondary</span>
+                <span>Accent</span>
+                <span>Bg</span>
+                <span>Text</span>
+            </div>
+            <div class="scheme-details">
+                <div class="detail-row">
+                    <span class="detail-label">Best for</span>
+                    <span class="detail-value">Wellness & recovery focus</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Vibe</span>
+                    <span class="detail-value">Natural, healing, calm</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CTA contrast</span>
+                    <span class="detail-value" style="color:#f59e0b">●●○ Medium</span>
+                </div>
+            </div>
+            <div class="mini-preview" style="background:#f0fdf4">
+                <button class="mini-btn" style="background:#0d9488;color:#fff">Book Consultation</button>
+                <button class="mini-btn" style="background:transparent;color:#0d9488;border:2px solid #0d9488">Learn More</button>
+                <div class="mini-card">Featured Treatment Card Preview</div>
+            </div>
+        </div>
+
+        <!-- Scheme D: Modern Cool Grey & Teal -->
+        <div class="scheme-card" onclick="selectScheme(this)">
+            <div class="scheme-header">
+                <div class="scheme-name">D · Modern Cool Teal</div>
+                <div class="scheme-desc">Modern tech-forward look. Good for younger, digital-native users.</div>
+            </div>
+            <div class="color-strip">
+                <div style="background:#0f766e" data-hex="#0f766e" onclick="copyHex(event,'#0f766e')"></div>
+                <div style="background:#7c3aed" data-hex="#7c3aed" onclick="copyHex(event,'#7c3aed')"></div>
+                <div style="background:#06b6d4" data-hex="#06b6d4" onclick="copyHex(event,'#06b6d4')"></div>
+                <div style="background:#fafafa" data-hex="#fafafa" onclick="copyHex(event,'#fafafa')"></div>
+                <div style="background:#1e293b" data-hex="#1e293b" onclick="copyHex(event,'#1e293b')"></div>
+            </div>
+            <div class="color-labels">
+                <span>Primary</span>
+                <span>Secondary</span>
+                <span>Accent</span>
+                <span>Bg</span>
+                <span>Text</span>
+            </div>
+            <div class="scheme-details">
+                <div class="detail-row">
+                    <span class="detail-label">Best for</span>
+                    <span class="detail-value">Tech-savvy medical travelers</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Vibe</span>
+                    <span class="detail-value">Modern, sleek, innovative</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">CTA contrast</span>
+                    <span class="detail-value" style="color:#f59e0b">●●○ Medium</span>
+                </div>
+            </div>
+            <div class="mini-preview" style="background:#fafafa">
+                <button class="mini-btn" style="background:#0f766e;color:#fff">Book Consultation</button>
+                <button class="mini-btn" style="background:transparent;color:#0f766e;border:2px solid #0f766e">Learn More</button>
+                <div class="mini-card">Featured Treatment Card Preview</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer-note">
+    Click any color block to copy HEX value · Share your team's choice with the dev<br>
+    <strong>Current leader: Scheme A</strong> (best conversion for medical sites)
+</div>
+
+<div class="copy-toast" id="toast">Copied!</div>
+
+<script>
+function copyHex(e, hex) {
+    e.stopPropagation();
+    navigator.clipboard.writeText(hex);
+    const toast = document.getElementById('toast');
+    toast.textContent = '✓ ' + hex + ' copied';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1500);
+}
+function selectScheme(card) {
+    document.querySelectorAll('.scheme-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+}
+</script>
+</body>
+</html>

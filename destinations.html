@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - HealthLink</title>
+    <meta name="description" content="Explore top medical tourism destinations across China: Shanghai, Beijing, Shenzhen, Chengdu, Hainan.">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .page-hero {
+            padding-top: calc(var(--header-height) + 60px);
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(28px,4vw,40px); font-weight:700; margin-bottom:12px; }
+        .page-hero p { font-size: 16px; opacity:0.85; max-width:600px; margin:0 auto; }
+
+        .city-section {
+            padding: 80px 0;
+        }
+        .city-section:nth-child(odd) {
+            background: var(--color-bg-secondary);
+        }
+        .city-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .city-section:nth-child(odd) .city-inner {
+            direction: rtl;
+        }
+        .city-section:nth-child(odd) .city-inner > * {
+            direction: ltr;
+        }
+        .city-image {
+            aspect-ratio: 16/10;
+            border-radius: var(--border-radius-xl);
+            display: flex;
+            align-items: flex-end;
+            color: #fff;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        .city-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 50%, rgba(0,0,0,0.6) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+        .city-image-overlay h3 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .city-info h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .city-tag {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+            margin-bottom: 16px;
+        }
+        .city-info > p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .city-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .city-highlight {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+        .city-stats {
+            display: flex;
+            gap: 24px;
+            padding-top: 20px;
+            border-top: 0.5px solid var(--color-border-tertiary);
+        }
+        .city-stat-num {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+        .city-stat-label {
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+        }
+        @media (max-width: 900px) {
+            .city-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .city-section:nth-child(odd) .city-inner {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HL</div>
+                <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+            </a>
+            <nav class="main-nav">
+                <a href="treatments.html" class="nav-link">Treatments</a>
+                <a href="hospitals.html" class="nav-link">Hospitals</a>
+                <a href="destinations.html" class="nav-link active">Destinations</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>中文</option>
+                    <option>Español</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Medical Tourism Destinations in China</h1>
+            <p>Each city offers unique advantages — from international hubs to wellness retreats. Find the best fit for your medical journey.</p>
+        </div>
+    </section>
+
+    <!-- Shanghai -->
+    <section class="city-section">
+        <div class="container">
+            <div class="city-inner">
+                <div class="city-image" style="background: linear-gradient(135deg, #1a6fc4, #185fa5);">
+                    <div class="city-image-overlay">
+                        <h3>Shanghai</h3>
+                    </div>
+                </div>
+                <div class="city-info">
+                    <h2>Shanghai</h2>
+                    <span class="city-tag">📍 Eastern China · International Hub</span>
+                    <p>China's most international city with world-class hospitals and English-speaking medical staff. Home to Ruijin, Huashan, and multiple international medical centers. Direct flights from 100+ cities worldwide.</p>
+                    <div class="city-highlights">
+                        <div class="city-highlight">✓ 2 international airports</div>
+                        <div class="city-highlight">✓ 30+ Grade 3A hospitals</div>
+                        <div class="city-highlight">✓ High English proficiency</div>
+                        <div class="city-highlight">✓ Luxury recovery hotels</div>
+                    </div>
+                    <div class="city-stats">
+                        <div>
+                            <span class="city-stat-num">30+</span>
+                            <span class="city-stat-label">Grade 3A Hospitals</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">100+</span>
+                            <span class="city-stat-label">Direct Flights</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">#1</span>
+                            <span class="city-stat-label">Medical Tourism City</span>
+                        </div>
+                    </div>
+                    <a href="hospitals.html" class="btn btn-primary" style="margin-top:20px;">View Hospitals →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beijing -->
+    <section class="city-section">
+        <div class="container">
+            <div class="city-inner">
+                <div class="city-image" style="background: linear-gradient(135deg, #c4161c, #e63946);">
+                    <div class="city-image-overlay">
+                        <h3>Beijing</h3>
+                    </div>
+                </div>
+                <div class="city-info">
+                    <h2>Beijing</h2>
+                    <span class="city-tag">📍 Northern China · Capital City</span>
+                    <p>China's political and medical center with the highest concentration of top-tier hospitals. Specializes in complex surgeries, oncology, and traditional Chinese medicine. Home to the world-renowned Tiantan neurosurgery hospital.</p>
+                    <div class="city-highlights">
+                        <div class="city-highlight">✓ Top medical research center</div>
+                        <div class="city-highlight">✓ TCM integration</div>
+                        <div class="city-highlight">✓ Complex case specialists</div>
+                        <div class="city-highlight">✓ Historic cultural sites</div>
+                    </div>
+                    <div class="city-stats">
+                        <div>
+                            <span class="city-stat-num">50+</span>
+                            <span class="city-stat-label">Grade 3A Hospitals</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">#1</span>
+                            <span class="city-stat-label">Medical Research</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">TCM</span>
+                            <span class="city-stat-label">Traditional Medicine</span>
+                        </div>
+                    </div>
+                    <a href="hospitals.html" class="btn btn-primary" style="margin-top:20px;">View Hospitals →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shenzhen -->
+    <section class="city-section">
+        <div class="container">
+            <div class="city-inner">
+                <div class="city-image" style="background: linear-gradient(135deg, #0a9396, #94d2bd);">
+                    <div class="city-image-overlay">
+                        <h3>Shenzhen</h3>
+                    </div>
+                </div>
+                <div class="city-info">
+                    <h2>Shenzhen</h2>
+                    <span class="city-tag">📍 Southern China · Pearl River Delta</span>
+                    <p>Modern city adjacent to Hong Kong with transparent healthcare pricing. HKU-Shenzhen Hospital brings Hong Kong medical standards to the mainland. Ideal for patients from Hong Kong, Macau, and Southeast Asia.</p>
+                    <div class="city-highlights">
+                        <div class="city-highlight">✓ HK medical standards</div>
+                        <div class="city-highlight">✓ Transparent pricing</div>
+                        <div class="city-highlight">✓ Modern facilities</div>
+                        <div class="city-highlight">✓ Close to Hong Kong</div>
+                    </div>
+                    <div class="city-stats">
+                        <div>
+                            <span class="city-stat-num">HK</span>
+                            <span class="city-stat-label">Medical Standard</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">Transparent</span>
+                            <span class="city-stat-label">Pricing Model</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">45min</span>
+                            <span class="city-stat-label">To Hong Kong</span>
+                        </div>
+                    </div>
+                    <a href="hospitals.html" class="btn btn-primary" style="margin-top:20px;">View Hospitals →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hainan / Boao -->
+    <section class="city-section">
+        <div class="container">
+            <div class="city-inner">
+                <div class="city-image" style="background: linear-gradient(135deg, #bb7909, #ee9b00);">
+                    <div class="city-image-overlay">
+                        <h3>Hainan · Boao</h3>
+                    </div>
+                </div>
+                <div class="city-info">
+                    <h2>Hainan (Boao Lecheng)</h2>
+                    <span class="city-tag">📍 Southern China · Tropical Island</span>
+                    <p>China's only "medical special zone" — innovative drugs and medical devices not yet approved elsewhere in China are available here. 540+ innovative drugs, 9,300+ international patients in 2025. Perfect for combining treatment with a tropical wellness retreat.</p>
+                    <div class="city-highlights">
+                        <div class="city-highlight">✓ 540+ innovative drugs</div>
+                        <div class="city-highlight">✓ Tropical wellness retreat</div>
+                        <div class="city-highlight">✓ No wait times</div>
+                        <div class="city-highlight">✓ Duty-free shopping</div>
+                    </div>
+                    <div class="city-stats">
+                        <div>
+                            <span class="city-stat-num">540+</span>
+                            <span class="city-stat-label">Innovative Drugs</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">9,300+</span>
+                            <span class="city-stat-label">Intl Patients (2025)</span>
+                        </div>
+                        <div>
+                            <span class="city-stat-num">86万+</span>
+                            <span class="city-stat-label">Medical Tourists</span>
+                        </div>
+                    </div>
+                    <a href="hospitals.html" class="btn btn-primary" style="margin-top:20px;">View Hospitals →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">HL</div>
+                        <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+                    </div>
+                    <p class="footer-desc">Your trusted partner for world-class medical care in China.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="WhatsApp">W</a>
+                        <a href="#" aria-label="WeChat">C</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html">Health Screening</a></li>
+                        <li><a href="treatments.html">Dental Care</a></li>
+                        <li><a href="treatments.html">Plastic Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Book Consultation</a></li>
+                        <li><a href="contact.html">WhatsApp</a></li>
+                        <li><a href="contact.html">WeChat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8613800000000" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.35C8.57 21.81 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 20c-1.64 0-3.24-.38-4.66-1.1l-.33-.2-3.08.81.82-3.01-.21-.34A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.64-13.71A6.47 6.47 0 0 0 15.5 8c-.35 0-.69.05-1.02.13-.15.04-.31.02-.45-.05L10.5 6.5l-1.15 3.97c-.21.64-.36 1.31-.44 2l-3.48.99L7.5 18c.76.94 1.69 1.73 2.73 2.3l.56.29 3.16-1.68c.14-.07.31-.1.47-.08A6.53 6.53 0 0 0 15.5 20c3.58 0 6.5-2.92 6.5-6.5 0-1.74-.68-3.37-1.86-4.58z"/></svg>
+    </a>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
