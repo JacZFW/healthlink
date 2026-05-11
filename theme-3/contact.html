@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HealthLink</title>
+    <meta name="description" content="Contact HealthLink for free medical consultation. Book your free consultation today.">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .page-hero {
+            padding-top: calc(var(--header-height) + 60px);
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin-bottom: 12px; }
+        .page-hero p { font-size: 16px; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+
+        .contact-section {
+            padding: 80px 0;
+        }
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .contact-info h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .contact-info > p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--border-radius-md);
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .contact-detail-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .contact-detail-item p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        .whatsapp-banner {
+            background: #25d366;
+            color: #fff;
+            border-radius: var(--border-radius-lg);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .whatsapp-banner-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        .whatsapp-banner h3 { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+        .whatsapp-banner p { font-size: 13px; opacity: 0.9; margin: 0; }
+
+        .contact-form-wrapper {
+            background: var(--color-bg-primary);
+            border-radius: var(--border-radius-xl);
+            border: 0.5px solid var(--color-border-tertiary);
+            padding: 40px 36px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+        }
+        .contact-form-wrapper h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .contact-form-wrapper > p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .contact-form .form-group {
+            margin-bottom: 18px;
+        }
+        .contact-form label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            margin-bottom: 6px;
+        }
+        .contact-form .form-group input,
+        .contact-form .form-group select,
+        .contact-form .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 0.5px solid var(--color-border-tertiary);
+            border-radius: var(--border-radius-md);
+            font-size: 14px;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .contact-form .form-group input:focus,
+        .contact-form .form-group select:focus,
+        .contact-form .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+        }
+        .contact-form .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .contact-form .btn-full {
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .form-success h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-success);
+            margin-bottom: 8px;
+        }
+        .form-success p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: var(--color-bg-secondary);
+        }
+        .faq-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--color-bg-primary);
+            border-radius: var(--border-radius-lg);
+            border: 0.5px solid var(--color-border-tertiary);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 18px 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-text-primary);
+        }
+        .faq-question .faq-toggle {
+            font-size: 18px;
+            color: var(--color-text-tertiary);
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer p {
+            padding: 0 24px 18px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HL</div>
+                <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+            </a>
+            <nav class="main-nav">
+                <a href="treatments.html" class="nav-link">Treatments</a>
+                <a href="hospitals.html" class="nav-link">Hospitals</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>中文</option>
+                    <option>Español</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Book your free consultation or reach out with any questions. We're here to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-inner">
+                
+                <!-- Left: Contact Info -->
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Whether you're ready to book your free consultation or just have questions about medical tourism in China, our team is here to help. Reach out via the form or contact us directly.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">📞</div>
+                            <div>
+                                <h3>WhatsApp / Phone</h3>
+                                <p>+86 138-0000-0000</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@chinamedconnect.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🕐</div>
+                            <div>
+                                <h3>Response Time</h3>
+                                <p>Within 24 hours, 7 days a week</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🌐</div>
+                            <div>
+                                <h3>Languages Spoken</h3>
+                                <p>English, 中文, Español, Français</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/8613800000000" class="whatsapp-banner" target="_blank" rel="noopener">
+                        <div class="whatsapp-banner-icon">💬</div>
+                        <div>
+                            <h3>Chat on WhatsApp</h3>
+                            <p>Get instant replies — click here</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="contact-form-wrapper" id="contactFormWrapper">
+                    <h2>Book Free Consultation</h2>
+                    <p>Fill out the form below. No obligation, 100% free.</p>
+                    
+                    <form class="contact-form" id="mainContactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">WhatsApp / Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 416 000 0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="treatment">Treatment of Interest</label>
+                            <select id="treatment" name="treatment" required>
+                                <option value="">Select a treatment...</option>
+                                <option>Health Screening / Checkup</option>
+                                <option>Dental Implants / Restoration</option>
+                                <option>Plastic / Cosmetic Surgery</option>
+                                <option>IVF / Fertility Treatment</option>
+                                <option>Cardiac Surgery</option>
+                                <option>Orthopedic Surgery</option>
+                                <option>TCM / Wellness Retreat</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Preferred Destination</label>
+                            <select id="destination" name="destination">
+                                <option value="">No preference</option>
+                                <option>Shanghai</option>
+                                <option>Beijing</option>
+                                <option>Shenzhen</option>
+                                <option>Chengdu</option>
+                                <option>Hainan (Boao)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your medical needs, preferred dates, or any questions..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Submit & Book Free Consultation</button>
+                        <p style="text-align:center; font-size:12px; color:var(--color-text-tertiary); margin-top:12px;">
+                            We respect your privacy. Your information is secure and will never be shared.
+                        </p>
+                    </form>
+
+                    <!-- Success Message (hidden by default) -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">✅</div>
+                        <h3>Thank You!</h3>
+                        <p>Our medical coordinator will contact you within 24 hours.<br>
+                        Check your email for a confirmation.</p>
+                        <br>
+                        <a href="https://wa.me/8613800000000" class="btn btn-primary">Chat on WhatsApp Instead</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is the consultation really free?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, 100% free. We never charge patients for consultations or coordination services. Our revenue comes from our hospital partners, not from you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need a visa to travel to China for medical treatment?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most nationalities can get a visa on arrival (144-hour visa-free transit) or apply for a medical visit visa. We provide invitation letters to support your visa application.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will my insurance cover treatment in China?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most US/European insurance plans do not cover international treatment. However, the total cost (including travel) is often still 50–70% less than domestic out-of-pocket costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What about follow-up care after I return home?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All medical records are provided in English. We also coordinate remote follow-up with your Chinese medical team, and share records with your local doctor.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How far in advance should I plan?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend starting the conversation 4–8 weeks before your desired treatment date. Some treatments (like IVF) may require more planning time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">HL</div>
+                        <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+                    </div>
+                    <p class="footer-desc">Your trusted partner for world-class medical care in China. Zero service fees. Expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="WhatsApp">W</a>
+                        <a href="#" aria-label="WeChat">C</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html">Health Screening</a></li>
+                        <li><a href="treatments.html">Dental Care</a></li>
+                        <li><a href="treatments.html">Plastic Surgery</a></li>
+                        <li><a href="treatments.html">IVF / Fertility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                        <li><a href="about.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Book Consultation</a></li>
+                        <li><a href="contact.html">WhatsApp</a></li>
+                        <li><a href="contact.html">WeChat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8613800000000" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.35C8.57 21.81 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 20c-1.64 0-3.24-.38-4.66-1.1l-.33-.2-3.08.81.82-3.01-.21-.34A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.64-13.71A6.47 6.47 0 0 0 15.5 8c-.35 0-.69.05-1.02.13-.15.04-.31.02-.45-.05L10.5 6.5l-1.15 3.97c-.21.64-.36 1.31-.44 2l-3.48.99L7.5 18c.76.94 1.69 1.73 2.73 2.3l.56.29 3.16-1.68c.14-.07.31-.1.47-.08A6.53 6.53 0 0 0 15.5 20c3.58 0 6.5-2.92 6.5-6.5 0-1.74-.68-3.37-1.86-4.58z"/></svg>
+    </a>
+
+    <script src="assets/script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                // Toggle clicked
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Contact Form Submission
+        const mainForm = document.getElementById('mainContactForm');
+        if (mainForm) {
+            mainForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = document.getElementById('submitBtn');
+                btn.textContent = 'Submitting...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+
+                // Simulate submission (replace with API call later)
+                setTimeout(() => {
+                    this.style.display = 'none';
+                    document.getElementById('formSuccess').classList.add('show');
+                }, 1200);
+            });
+        }
+    </script>
+</body>
+</html>

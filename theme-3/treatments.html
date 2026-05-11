@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatments - HealthLink</title>
+    <meta name="description" content="Explore medical treatments in China - health screening, dental, plastic surgery, IVF, cardiac surgery and more.">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .page-hero {
+            padding-top: calc(var(--header-height) + 60px);
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(28px,4vw,40px); font-weight:700; margin-bottom:12px; }
+        .page-hero p { font-size: 16px; opacity:0.85; max-width:600px; margin:0 auto; }
+        
+        .treatment-detail {
+            padding: 80px 0;
+        }
+        .treatment-detail:nth-child(odd) {
+            background: var(--color-bg-secondary);
+        }
+        .treatment-detail-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .treatment-detail:nth-child(odd) .treatment-detail-inner {
+            direction: rtl;
+        }
+        .treatment-detail:nth-child(odd) .treatment-detail-inner > * {
+            direction: ltr;
+        }
+        .treatment-detail-image {
+            aspect-ratio: 4/3;
+            border-radius: var(--border-radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: #fff;
+        }
+        .treatment-detail h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .treatment-detail p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .treatment-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .treatment-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        .treatment-price-badge {
+            display: inline-block;
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            padding: 6px 16px;
+            border-radius: var(--border-radius-md);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 768px) {
+            .treatment-detail-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .treatment-detail:nth-child(odd) .treatment-detail-inner {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HL</div>
+                <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+            </a>
+            <nav class="main-nav">
+                <a href="treatments.html" class="nav-link active">Treatments</a>
+                <a href="hospitals.html" class="nav-link">Hospitals</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>中文</option>
+                    <option>Español</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Medical Treatments in China</h1>
+            <p>World-class care at 60–85% savings. Explore our most popular treatments and see how much you can save.</p>
+        </div>
+    </section>
+
+    <!-- Health Screening -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #1a6fc4, #185fa5);">
+                    🔬
+                </div>
+                <div>
+                    <div class="treatment-price-badge">From $300 <span style="font-size:13px;font-weight:400;">(US $2,000+)</span></div>
+                    <h2>Executive Health Screening</h2>
+                    <p>Comprehensive full-body health checkups using state-of-the-art imaging technology. Packages include PET-CT, MRI, ultrasound, blood panels, and specialist consultations.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ PET-CT scan included in premium packages</li>
+                        <li>✓ Results in 24–48 hours</li>
+                        <li>✓ English-speaking physicians</li>
+                        <li>✓ Personalized health report</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #0a9396, #94d2bd);">
+                    🦷
+                </div>
+                <div>
+                    <div class="treatment-price-badge">From $800 <span style="font-size:13px;font-weight:400;">(US $3,000+)</span></div>
+                    <h2>Dental Implants & Restoration</h2>
+                    <p>Save up to 75% on dental implants, All-on-4, crowns, and full-mouth restoration. Premium materials, internationally trained dentists.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ All-on-4 / All-on-6 available</li>
+                        <li>✓ CAD/CAM same-day crowns</li>
+                        <li>✓ 5–10 year warranty on implants</li>
+                        <li>✓ Combine with a vacation</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plastic Surgery -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #c4161c, #e63946);">
+                    💉
+                </div>
+                <div>
+                    <div class="treatment-price-badge">Save 70% <span style="font-size:13px;font-weight:400;">vs US prices</span></div>
+                    <h2>Plastic & Cosmetic Surgery</h2>
+                    <p>World-renowned cosmetic surgeons delivering natural, beautiful results. From facial rejuvenation to body contouring, all at a fraction of US/European prices.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ Facelift, rhinoplasty, blepharoplasty</li>
+                        <li>✓ Breast augmentation / reduction</li>
+                        <li>✓ Liposuction & body sculpting</li>
+                        <li>✓ Luxury recovery retreats available</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardiac -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #bb7909, #ee9b00);">
+                    ❤️
+                </div>
+                <div>
+                    <div class="treatment-price-badge">From $8,000 <span style="font-size:13px;font-weight:400;">(US $50,000+)</span></div>
+                    <h2>Cardiac Surgery</h2>
+                    <p>Top-tier cardiac centers with Da Vinci robotic systems. Bypass, valve repair, and minimally invasive procedures performed by internationally trained cardiac surgeons.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ Coronary artery bypass surgery</li>
+                        <li>✓ Valve repair & replacement</li>
+                        <li>✓ Minimally invasive options</li>
+                        <li>✓ ICU-standard post-op care</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IVF -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #7f77dd, #534ab7);">
+                    👶
+                </div>
+                <div>
+                    <div class="treatment-price-badge">From $3,000 <span style="font-size:13px;font-weight:400;">(US $15,000+)</span></div>
+                    <h2>IVF & Fertility Treatment</h2>
+                    <p>High success rates with advanced reproductive technology including ICSI, PGT-A, and egg freezing. Compassionate care in a supportive environment.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ IVF / ICSI cycles</li>
+                        <li>✓ Preimplantation genetic testing</li>
+                        <li>✓ Egg & sperm freezing</li>
+                        <li>✓ Surrogacy coordination (where legal)</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TCM & Wellness -->
+    <section class="treatment-detail">
+        <div class="container">
+            <div class="treatment-detail-inner">
+                <div class="treatment-detail-image" style="background: linear-gradient(135deg, #0f6e56, #3b6d11);">
+                    🧘
+                </div>
+                <div>
+                    <div class="treatment-price-badge">Customized packages</div>
+                    <h2>TCM & Wellness Retreats</h2>
+                    <p>Experience the best of Traditional Chinese Medicine combined with modern diagnostics. Perfect for preventive care, chronic condition management, and holistic wellness.</p>
+                    <ul class="treatment-highlights">
+                        <li>✓ Acupuncture & cupping therapy</li>
+                        <li>✓ Herbal medicine consultations</li>
+                        <li>✓ Tai chi & qigong instruction</li>
+                        <li>✓ 7–14 day wellness retreats</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: var(--color-bg-secondary); padding:60px 0; text-align:center;">
+        <div class="container">
+            <h2 style="font-size:24px; font-weight:700; margin-bottom:12px;">Not Sure Which Treatment Is Right for You?</h2>
+            <p style="color:var(--color-text-secondary); margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto;">Our medical coordinators will help you find the best treatment plan and hospital match for your needs.</p>
+            <a href="contact.html" class="btn btn-primary" style="font-size:16px; padding:14px 36px;">Book Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">HL</div>
+                        <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+                    </div>
+                    <p class="footer-desc">Your trusted partner for world-class medical care in China. Zero service fees. Expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="WhatsApp">W</a>
+                        <a href="#" aria-label="WeChat">C</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html">Health Screening</a></li>
+                        <li><a href="treatments.html">Dental Care</a></li>
+                        <li><a href="treatments.html">Plastic Surgery</a></li>
+                        <li><a href="treatments.html">IVF / Fertility</a></li>
+                        <li><a href="treatments.html">Cardiac Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                        <li><a href="about.html">Partners</a></li>
+                        <li><a href="about.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">FAQs</a></li>
+                        <li><a href="about.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8613800000000" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.35C8.57 21.81 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 20c-1.64 0-3.24-.38-4.66-1.1l-.33-.2-3.08.81.82-3.01-.21-.34A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.64-13.71A6.47 6.47 0 0 0 15.5 8c-.35 0-.69.05-1.02.13-.15.04-.31.02-.45-.05L10.5 6.5l-1.15 3.97c-.21.64-.36 1.31-.44 2l-3.48.99L7.5 18c.76.94 1.69 1.73 2.73 2.3l.56.29 3.16-1.68c.14-.07.31-.1.47-.08A6.53 6.53 0 0 0 15.5 20c3.58 0 6.5-2.92 6.5-6.5 0-1.74-.68-3.37-1.86-4.58z"/></svg>
+    </a>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

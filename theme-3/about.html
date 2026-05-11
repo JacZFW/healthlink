@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HealthLink</title>
+    <meta name="description" content="Learn about HealthLink - your trusted partner for medical tourism to China.">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .page-hero {
+            padding-top: calc(var(--header-height) + 60px);
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(28px,4vw,40px); font-weight:700; margin-bottom:12px; }
+        .page-hero p { font-size: 16px; opacity:0.85; max-width:600px; margin:0 auto; }
+
+        .about-section { padding: 80px 0; }
+        .about-section:nth-child(odd) { background: var(--color-bg-secondary); }
+        .about-inner { max-width: 800px; margin: 0 auto; }
+        .about-inner h2 { font-size: 26px; font-weight: 700; margin-bottom: 16px; }
+        .about-inner p { font-size: 15px; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .value-card {
+            background: var(--color-bg-primary);
+            border-radius: var(--border-radius-lg);
+            border: 0.5px solid var(--color-border-tertiary);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .value-icon { font-size: 36px; margin-bottom: 12px; }
+        .value-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .value-card p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0 auto 16px;
+        }
+        .step-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .step-card p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .team-card {
+            text-align: center;
+        }
+        .team-avatar {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .team-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+        .team-card p { font-size: 12px; color: var(--color-text-tertiary); }
+        
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .stat-item-num {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+        .stat-item-label {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HL</div>
+                <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+            </a>
+            <nav class="main-nav">
+                <a href="treatments.html" class="nav-link">Treatments</a>
+                <a href="hospitals.html" class="nav-link">Hospitals</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>中文</option>
+                    <option>Español</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About HealthLink</h1>
+            <p>Connecting the world to world-class medical care in China. Zero service fees. Expert guidance. Transparent pricing.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-inner">
+                <h2>Our Story</h2>
+                <p>HealthLink was founded with a simple mission: make world-class medical care in China accessible and affordable to patients around the world.</p>
+                <p>We saw that millions of patients were paying 3–10x more for medical treatments in the US, Canada, and Europe — often waiting months for care. Meanwhile, China has built a world-class healthcare system with 1,876 Grade 3A hospitals, 200+ Da Vinci surgical robots, and medical technology that rivals or exceeds the West.</p>
+                <p>Our team of medical coordinators, many with bilingual backgrounds, bridges the gap — handling everything from hospital matching and appointment booking to travel logistics and post-treatment follow-up. And we charge <strong>zero service fees</strong> to patients. Ever.</p>
+            </div>
+            <div class="stats-bar">
+                <div>
+                    <span class="stat-item-num">500,000+</span>
+                    <span class="stat-item-label">Patients Served</span>
+                </div>
+                <div>
+                    <span class="stat-item-num">50+</span>
+                    <span class="stat-item-label">Partner Hospitals</span>
+                </div>
+                <div>
+                    <span class="stat-item-num">60–85%</span>
+                    <span class="stat-item-label">Average Savings</span>
+                </div>
+                <div>
+                    <span class="stat-item-num">$0</span>
+                    <span class="stat-item-label">Service Fees</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-inner" style="text-align:center;">
+                <h2>Our Values</h2>
+                <p style="max-width:600px; margin:0 auto 0;">These principles guide every decision we make and every patient we serve.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Zero Service Fees</h3>
+                    <p>We never charge patients. Our revenue comes from hospital partnerships, not from your pocket.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>Upfront cost breakdowns with zero hidden fees. What we quote is what you pay.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌐</div>
+                    <h3>Expert Coordination</h3>
+                    <p>Bilingual medical coordinators by your side from first inquiry to full recovery.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✅</div>
+                    <h3>Quality Verified</h3>
+                    <p>All partner hospitals are Grade 3A (top tier) with dedicated international patient centers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-inner" style="text-align:center;">
+                <h2>How It Works</h2>
+                <p style="max-width:600px; margin:0 auto 0;">Your medical journey to China in 5 simple steps.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>Tell us about your medical needs. Get a free, no-obligation treatment plan and cost estimate.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Hospital Matching</h3>
+                    <p>We match you with the best hospital and doctor for your specific condition and budget.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Travel Planning</h3>
+                    <p>We assist with visa invitation letters, flight recommendations, and hotel bookings near the hospital.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Treatment in China</h3>
+                    <p>Your coordinator meets you at the airport and stays with you throughout your treatment.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Follow-up Care</h3>
+                    <p>Remote follow-up with your Chinese medical team after you return home. Records shared with your local doctor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%); padding:60px 0; text-align:center; color:#fff;">
+        <div class="container">
+            <h2 style="font-size:24px; font-weight:700; margin-bottom:12px;">Ready to Start Your Medical Journey?</h2>
+            <p style="opacity:0.85; margin-bottom:24px; max-width:500px; margin-left:auto; margin-right:auto;">Book your free consultation today. No obligation, no fees, just expert guidance.</p>
+            <a href="contact.html" class="btn" style="background:#fff; color:var(--color-primary); font-weight:600; padding:14px 36px; font-size:16px;">Book Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">HL</div>
+                        <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+                    </div>
+                    <p class="footer-desc">Your trusted partner for world-class medical care in China.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="WhatsApp">W</a>
+                        <a href="#" aria-label="WeChat">C</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html">Health Screening</a></li>
+                        <li><a href="treatments.html">Dental Care</a></li>
+                        <li><a href="treatments.html">Plastic Surgery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Book Consultation</a></li>
+                        <li><a href="contact.html">WhatsApp</a></li>
+                        <li><a href="contact.html">WeChat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8613800000000" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.35C8.57 21.81 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 20c-1.64 0-3.24-.38-4.66-1.1l-.33-.2-3.08.81.82-3.01-.21-.34A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.64-13.71A6.47 6.47 0 0 0 15.5 8c-.35 0-.69.05-1.02.13-.15.04-.31.02-.45-.05L10.5 6.5l-1.15 3.97c-.21.64-.36 1.31-.44 2l-3.48.99L7.5 18c.76.94 1.69 1.73 2.73 2.3l.56.29 3.16-1.68c.14-.07.31-.1.47-.08A6.53 6.53 0 0 0 15.5 20c3.58 0 6.5-2.92 6.5-6.5 0-1.74-.68-3.37-1.86-4.58z"/></svg>
+    </a>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

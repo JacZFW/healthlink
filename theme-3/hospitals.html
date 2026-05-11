@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Hospitals - HealthLink</title>
+    <meta name="description" content="Grade 3A hospitals in China with international patient centers. World-class care with English-speaking staff.">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .page-hero {
+            padding-top: calc(var(--header-height) + 60px);
+            padding-bottom: 60px;
+            background: linear-gradient(135deg, #1a6fc4 0%, #0a9396 100%);
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero h1 { font-size: clamp(28px,4vw,40px); font-weight: 700; margin-bottom: 12px; }
+        .page-hero p { font-size: 16px; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+        
+        .hospital-detail {
+            padding: 80px 0;
+        }
+        .hospital-detail:nth-child(odd) {
+            background: var(--color-bg-secondary);
+        }
+        .hospital-detail-inner {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .hospital-sidebar {
+            position: sticky;
+            top: calc(var(--header-height) + 24px);
+        }
+        .hospital-photo {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .hospital-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+        .hospital-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hospital-body h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .hospital-location-tag {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .hospital-body p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .specialty-tag {
+            padding: 8px 14px;
+            background: var(--color-bg-secondary);
+            border-radius: var(--border-radius-md);
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .hospital-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .hospital-stat {
+            text-align: center;
+            padding: 16px;
+            background: var(--color-bg-secondary);
+            border-radius: var(--border-radius-md);
+        }
+        .hospital-stat-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+        .hospital-stat-label {
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+        }
+        @media (max-width: 900px) {
+            .hospital-detail-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .hospital-sidebar {
+                position: static;
+            }
+            .hospital-photo {
+                max-height: 240px;
+                aspect-ratio: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">HL</div>
+                <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+            </a>
+            <nav class="main-nav">
+                <a href="treatments.html" class="nav-link">Treatments</a>
+                <a href="hospitals.html" class="nav-link active">Hospitals</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <select class="language-select">
+                    <option>English</option>
+                    <option>中文</option>
+                    <option>Español</option>
+                </select>
+                <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Partner Hospitals</h1>
+            <p>Grade 3A hospitals with dedicated international patient centers and English-speaking medical teams.</p>
+        </div>
+    </section>
+
+    <!-- Huashan Hospital -->
+    <section class="hospital-detail">
+        <div class="container">
+            <div class="hospital-detail-inner">
+                <div class="hospital-sidebar">
+                    <div class="hospital-photo" style="background: linear-gradient(135deg, #1a6fc4, #185fa5);">
+                        H
+                    </div>
+                    <div class="hospital-meta">
+                        <span>📍 Shanghai, China</span>
+                        <span>⭐ Grade 3A (Top Tier)</span>
+                        <span>🌐 English: High</span>
+                        <span>🏥 International Patient Center: Yes</span>
+                    </div>
+                </div>
+                <div class="hospital-body">
+                    <h2>Huashan Hospital (International Medical Center)</h2>
+                    <span class="hospital-location-tag">📍 Shanghai · Putuo District</span>
+                    <p>Huashan Hospital is one of Shanghai's most prestigious Grade 3A hospitals, renowned for neurology, neurosurgery, and advanced medical imaging. The International Medical Center provides dedicated services for foreign patients with English-speaking staff and concierge-style care.</p>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Top Specialties</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-tag">Neurology</div>
+                        <div class="specialty-tag">Neurosurgery</div>
+                        <div class="specialty-tag">Medical Imaging</div>
+                        <div class="specialty-tag">Dermatology</div>
+                        <div class="specialty-tag">Health Screening</div>
+                        <div class="specialty-tag">Orthopedics</div>
+                    </div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Key Stats</h3>
+                    <div class="hospital-stats">
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">4,500+</span>
+                            <span class="hospital-stat-label">Beds</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">186</span>
+                            <span class="hospital-stat-label">Years of History</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">JCI</span>
+                            <span class="hospital-stat-label">Exited 2023 *</span>
+                        </div>
+                    </div>
+                    <p style="font-size:12px; color:var(--color-text-tertiary);">* JCI exited China in 2023. Grade 3A is the current top national standard.</p>
+                    <a href="contact.html" class="btn btn-primary">Book Appointment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ruijin Hospital -->
+    <section class="hospital-detail">
+        <div class="container">
+            <div class="hospital-detail-inner">
+                <div class="hospital-sidebar">
+                    <div class="hospital-photo" style="background: linear-gradient(135deg, #0a9396, #94d2bd);">
+                        R
+                    </div>
+                    <div class="hospital-meta">
+                        <span>📍 Shanghai, China</span>
+                        <span>⭐ Grade 3A (Top Tier)</span>
+                        <span>🌐 English: High</span>
+                        <span>🏥 International Medical Center: Yes</span>
+                    </div>
+                </div>
+                <div class="hospital-body">
+                    <h2>Ruijin Hospital (International Medical Center)</h2>
+                    <span class="hospital-location-tag">📍 Shanghai · Huangpu District</span>
+                    <p>Ruijin Hospital is a leading Grade 3A hospital affiliated with Shanghai Jiao Tong University. It is particularly renowned for endocrine disorders, hematology, and comprehensive executive health screenings. The International Medical Center offers premium care tailored to international patients.</p>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Top Specialties</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-tag">Endocrinology</div>
+                        <div class="specialty-tag">Hematology</div>
+                        <div class="specialty-tag">Executive Health Screening</div>
+                        <div class="specialty-tag">Cardiology</div>
+                        <div class="specialty-tag">Oncology</div>
+                        <div class="specialty-tag">Organ Transplant</div>
+                    </div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Key Stats</h3>
+                    <div class="hospital-stats">
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">2,400+</span>
+                            <span class="hospital-stat-label">Beds</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">1907</span>
+                            <span class="hospital-stat-label">Est. Year</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">Top 10</span>
+                            <span class="hospital-stat-label">National Ranking</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Book Appointment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beijing United Family -->
+    <section class="hospital-detail">
+        <div class="container">
+            <div class="hospital-detail-inner">
+                <div class="hospital-sidebar">
+                    <div class="hospital-photo" style="background: linear-gradient(135deg, #c4161c, #e63946);">
+                        U
+                    </div>
+                    <div class="hospital-meta">
+                        <span>📍 Beijing, China</span>
+                        <span>⭐ International Standard</span>
+                        <span>🌐 English: Full</span>
+                        <span>🏥 Western-style Care: Yes</span>
+                    </div>
+                </div>
+                <div class="hospital-body">
+                    <h2>Beijing United Family Hospital</h2>
+                    <span class="hospital-location-tag">📍 Beijing · Chaoyang District</span>
+                    <p>Beijing United Family Hospital (BJU) is a Joint Commission International (JCI)-accredited hospital providing Western-style medical care. It is the top choice for expats and international patients seeking familiar care standards with English-speaking doctors from around the world.</p>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Top Specialties</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-tag">Family Medicine</div>
+                        <div class="specialty-tag">Pediatrics</div>
+                        <div class="specialty-tag">Obstetrics & Gynecology</div>
+                        <div class="specialty-tag">Dental Care</div>
+                        <div class="specialty-tag">Mental Health</div>
+                        <div class="specialty-tag">Urgent Care</div>
+                    </div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Key Stats</h3>
+                    <div class="hospital-stats">
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">JCI</span>
+                            <span class="hospital-stat-label">Accredited</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">24/7</span>
+                            <span class="hospital-stat-label">Emergency</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">100%</span>
+                            <span class="hospital-stat-label">English Spoken</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Book Appointment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HKU-Shenzhen -->
+    <section class="hospital-detail">
+        <div class="container">
+            <div class="hospital-detail-inner">
+                <div class="hospital-sidebar">
+                    <div class="hospital-photo" style="background: linear-gradient(135deg, #7f77dd, #534ab7);">
+                        H
+                    </div>
+                    <div class="hospital-meta">
+                        <span>📍 Shenzhen, China</span>
+                        <span>⭐ HK Standard</span>
+                        <span>🌐 English: High</span>
+                        <span>🏥 Price Transparent: Yes</span>
+                    </div>
+                </div>
+                <div class="hospital-body">
+                    <h2>HKU-Shenzhen Hospital</h2>
+                    <span class="hospital-location-tag">📍 Shenzhen · Futian District</span>
+                    <p>The University of Hong Kong-Shenzhen Hospital brings Hong Kong's medical standards to mainland China. It is known for transparent pricing, high-quality care, and excellent infection control. A top choice for patients from Hong Kong and abroad.</p>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Top Specialties</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-tag">General Surgery</div>
+                        <div class="specialty-tag">Internal Medicine</div>
+                        <div class="specialty-tag">Pediatrics</div>
+                        <div class="specialty-tag">Obstetrics</div>
+                        <div class="specialty-tag">Medical Imaging</div>
+                        <div class="specialty-tag">TCM Integration</div>
+                    </div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Key Stats</h3>
+                    <div class="hospital-stats">
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">HK</span>
+                            <span class="hospital-stat-label">Standard</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">Transparent</span>
+                            <span class="hospital-stat-label">Pricing</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">2012</span>
+                            <span class="hospital-stat-label">Est. Year</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Book Appointment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boao Lecheng -->
+    <section class="hospital-detail">
+        <div class="container">
+            <div class="hospital-detail-inner">
+                <div class="hospital-sidebar">
+                    <div class="hospital-photo" style="background: linear-gradient(135deg, #bb7909, #ee9b00);">
+                        B
+                    </div>
+                    <div class="hospital-meta">
+                        <span>📍 Hainan, China</span>
+                        <span>⭐ Medical Special Zone</span>
+                        <span>🌐 English: High</span>
+                        <span>🏥 Innovative Drugs: Yes</span>
+                    </div>
+                </div>
+                <div class="hospital-body">
+                    <h2>Boao Lecheng International Medical Tourism Zone</h2>
+                    <span class="hospital-location-tag">📍 Hainan · Qionghai City</span>
+                    <p>China's only "medical special zone" — the Boao Lecheng International Medical Tourism Pilot Zone allows use of innovative drugs and medical devices not yet approved elsewhere in China. 540+ innovative drugs/devices available. 9,300+ international patients served in 2025.</p>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Top Specialties</h3>
+                    <div class="specialties-grid">
+                        <div class="specialty-tag">Innovative Drug Access</div>
+                        <div class="specialty-tag">Cancer Therapy</div>
+                        <div class="specialty-tag">Wellness Retreat</div>
+                        <div class="specialty-tag">Plastic Surgery</div>
+                        <div class="specialty-tag">Rehabilitation</div>
+                        <div class="specialty-tag">TCM Therapies</div>
+                    </div>
+                    <h3 style="font-size:16px; font-weight:600; margin-bottom:12px;">Key Stats</h3>
+                    <div class="hospital-stats">
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">540+</span>
+                            <span class="hospital-stat-label">Innovative Drugs</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">9,300+</span>
+                            <span class="hospital-stat-label">Intl Patients (2025)</span>
+                        </div>
+                        <div class="hospital-stat">
+                            <span class="hospital-stat-num">86万+</span>
+                            <span class="hospital-stat-label">Medical Tourists (2025)</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Book Appointment →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">HL</div>
+                        <span class="logo-text">Health<span class="logo-highlight">Link</span></span>
+                    </div>
+                    <p class="footer-desc">Your trusted partner for world-class medical care in China.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="WhatsApp">W</a>
+                        <a href="#" aria-label="WeChat">C</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html">Health Screening</a></li>
+                        <li><a href="treatments.html">Dental Care</a></li>
+                        <li><a href="treatments.html">Plastic Surgery</a></li>
+                        <li><a href="treatments.html">IVF / Fertility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html">How It Works</a></li>
+                        <li><a href="about.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Book Consultation</a></li>
+                        <li><a href="contact.html">WhatsApp</a></li>
+                        <li><a href="contact.html">WeChat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HealthLink. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/8613800000000" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.17-1.35C8.57 21.81 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 20c-1.64 0-3.24-.38-4.66-1.1l-.33-.2-3.08.81.82-3.01-.21-.34A9.93 9.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.64-13.71A6.47 6.47 0 0 0 15.5 8c-.35 0-.69.05-1.02.13-.15.04-.31.02-.45-.05L10.5 6.5l-1.15 3.97c-.21.64-.36 1.31-.44 2l-3.48.99L7.5 18c.76.94 1.69 1.73 2.73 2.3l.56.29 3.16-1.68c.14-.07.31-.1.47-.08A6.53 6.53 0 0 0 15.5 20c3.58 0 6.5-2.92 6.5-6.5 0-1.74-.68-3.37-1.86-4.58z"/></svg>
+    </a>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
